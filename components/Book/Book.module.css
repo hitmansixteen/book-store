@@ -66,15 +66,19 @@
 /* Review Section Styling */
 .reviewSection {
   margin: 2rem auto;
-  max-width: 800px;
+  max-width: 600px; /* Make the section narrower */
   padding: 0;
+  text-align: left; /* Align text to the left */
+  float: left; /* Float the reviews section to the left */
+  width: 40%; /* Adjust width to fit the layout */
+  margin-right: 2rem; /* Add space between sections */
 }
 
 .reviewHeading {
   color: var(--heading-color, #2c3e50); 
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--button-bg, #2980b9); 
+  font-size: 1.5rem; /* Slightly smaller font size */
+  margin-bottom: 1rem;
+  
   padding-bottom: 0.5rem;
 }
 
@@ -84,35 +88,35 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem; /* Reduce the spacing between reviews */
 }
 
-/* Review Item Styling */
+/* Updated Review Item Styling */
 .reviewItem {
   background-color: var(--card-bg, #ffffff);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 1rem; /* Reduce padding */
+  border-radius: 8px; /* Slightly smaller corner radius */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
+  text-align: left; /* Align content to the left */
 }
 
 .reviewItem:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* User and Rating Styling within Reviews */
 .reviewUser {
   color: var(--title-color, #34495e); 
   font-weight: 600;
-  font-size: 1.1rem;
-  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .reviewRating {
   color: var(--rating-color, #f39c12); 
   font-weight: 500;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.5rem 0;
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -122,12 +126,12 @@
   color: var(--rating-color, #f39c12); 
 }
 
-/* Review Comment Styling */
 .reviewComment {
   color: var(--text-color, #7f8c8d);
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Slightly smaller font size */
   padding: 0;
 }
+

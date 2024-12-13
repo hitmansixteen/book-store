@@ -5,14 +5,12 @@ import styles from "./Layout.module.css";
 import { useUser } from "@/context/user-context";
 import { useRouter } from "next/router";
 
-// Layout component to show on each page
 const Layout = (props) => {
     const { updateUser } = useUser();
     const router = useRouter();
     const [theme, setTheme] = useState("light");
     const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-    // Getting the logged-in user
     const { data: session, status } = useSession();
 
     useEffect(() => {
@@ -25,7 +23,6 @@ const Layout = (props) => {
         setTheme((prev) => (prev === "light" ? "dark" : "light"));
     };
 
-    // Logging-out the user
     const handleLogout = async () => {
         const response = await fetch("/api/auth/logout", {
             method: "POST",
@@ -51,11 +48,25 @@ const Layout = (props) => {
     return (
         <div className={styles.layout}>
             <header className={styles.header}>
+                {/* Footer navigation now in headerLeft */}
                 <div className={styles.headerLeft}>
-                    {/* Any left-aligned content can go here */}
+                    <nav className={styles.footerNav}>
+                        <Link href="/" className={styles.navLink}>
+                            Featured Books
+                        </Link>
+                        <Link href="/info" className={styles.navLink}>
+                            Learn More
+                        </Link>
+                        <Link href="/genres" className={styles.navLink}>
+                            Genres
+                        </Link>
+                        <Link href="/authors" className={styles.navLink}>
+                            Authors
+                        </Link>
+                    </nav>
                 </div>
 
-                {/* General Header (Username/Sign-in, Switch theme) */}
+                {/* Header-related elements now in headerRight */}
                 <div className={styles.headerRight}>
                     {session ? (
                         <div className={styles.userWrapper}>
@@ -65,7 +76,8 @@ const Layout = (props) => {
                                     setIsPopupVisible((prev) => !prev)
                                 }
                             >
-                                {session.user.username || session.user.email}
+                                Welcome{" "}
+                                {session.user.username || session.user.email}!
                             </span>
 
                             {isPopupVisible && (
@@ -109,24 +121,9 @@ const Layout = (props) => {
 
             <main className={styles.main}>{props.children}</main>
 
-            {/* Genreal Footer */}
+            {/* Footer content is now empty or adjusted */}
             <footer className={styles.footer}>
-                <div className={styles.footerContent}>
-                    <nav className={styles.footerNav}>
-                        <Link href="/" className={styles.navLink}>
-                            Featured Books
-                        </Link>
-                        <Link href="/info" className={styles.navLink}>
-                            Learn More
-                        </Link>
-                        <Link href="/genres" className={styles.navLink}>
-                            Genres
-                        </Link>
-                        <Link href="/authors" className={styles.navLink}>
-                            Authors
-                        </Link>
-                    </nav>
-                </div>
+                {/* Optional footer content */}
             </footer>
         </div>
     );

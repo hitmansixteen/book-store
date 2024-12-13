@@ -40,6 +40,11 @@ export default function Home({ books, authors, genres }) {
         <>
             <header className={styling.heading}>Featured Books</header>
 
+            <div className={styling.Buttons}>
+                <button className={styling.Button} onClick={viewAllBooks}>
+                    View All Books
+                </button>
+            </div>
             <div className={stylingBook.bookList}>
                 {books.map((book) => (
                     <Book
@@ -50,12 +55,6 @@ export default function Home({ books, authors, genres }) {
                         onClickBook={() => bookClicked(book.id)}
                     />
                 ))}
-            </div>
-
-            <div className={styling.Buttons}>
-                <button className={styling.Button} onClick={viewAllBooks}>
-                    View All Books
-                </button>
             </div>
         </>
     );

@@ -53,8 +53,8 @@
 
 .Buttons {
   margin-bottom: 10px;
-  display: flex; 
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the left */
   gap: 10px; 
 }
 
@@ -102,27 +102,32 @@
   background-color: var(--item-hover-bg, #dcdcdc); 
 }
 
+.recentSearchesContainer {
+  text-align: left; /* Align container text to the left */
+  padding: 1rem;
+}
+
 .recentSearches {
-  margin-top: 2rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: flex-start; /* Align items to the left */
 }
 
 .recentSearches h3 {
   font-size: 1.2rem;
   color: var(--heading-color, #444); 
   margin-right: 1rem;
-  text-align: center;
 }
 
 .recentSearches ul {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   padding: 0;
   margin: 0;
+  gap: 0.5rem; /* Add spacing between list items */
 }
 
 .recentSearches li {
@@ -131,12 +136,6 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin-right: 0.5rem;
-}
-
-.recentSearchesContainer {
-  text-align: center;
-  padding: 1rem;
 }
 
 .text {

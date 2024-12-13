@@ -173,3 +173,24 @@ input:checked + .slider:before {
   background-color: #0056b3;
 }
 
+.headerLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footerNav {
+  display: flex;
+  gap: 15px; /* Adjust spacing between links */
+}
+
+.headerRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.themeSwitch {
+  margin-left: 20px; /* Adjust spacing from other header-right elements */
+}
+
