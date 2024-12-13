@@ -1,16 +1,10 @@
-
-/* Author Card Styling */
 .authorCard {
   background-color: var(--card-bg, #ffffff); 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 16px;
-  margin: 16px 0;
   transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .authorCard:hover {
@@ -18,7 +12,6 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
-/* Author Name Styling */
 .authorName {
   font-size: 1.5rem;
   font-weight: bold;
@@ -26,11 +19,9 @@
   margin-bottom: 8px;
 }
 
-/* Author Bio Styling */
 .authorBio {
   font-size: 1rem;
   color: var(--text-color, #7f8c8d);
   line-height: 1.5;
-  margin-top: 0;
-  margin-bottom: 12px;
+  margin: 0;
 }

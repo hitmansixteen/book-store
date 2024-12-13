@@ -10,16 +10,16 @@ const AuthorsPage = ({ authors }) => {
 
     return (
         <div>
-            <header className={styles.heading}>Authors Page</header>
-            <ul>
-                {authors.map((i) => {
-                    return (
+            <div>
+                <header className={styles.heading}>Authors Page</header>
+                <ul className={styles.authorsGrid}>
+                    {authors.map((i) => (
                         <li key={i.id}>
                             <Author author={i} />
                         </li>
-                    );
-                })}
-            </ul>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 };

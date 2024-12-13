@@ -78,10 +78,10 @@
 .genreList {
   list-style-type: none;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  display: flex; /* Use flexbox to arrange items side by side */
+  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+  justify-content: center; /* Center items in the container */
+  gap: 10px; /* Add spacing between items */
 }
 
 .genreItem {
@@ -93,6 +93,9 @@
   color: var(--item-text-color, #333);
   cursor: pointer;
   transition: background-color 0.3s ease;
+  min-width: 150px; /* Optional: Set a minimum width for items */
+  text-align: center; /* Center text within the item */
+  flex: 1 1 auto; /* Ensure flexible growth and shrinkage */
 }
 
 .genreItem:hover {
@@ -183,3 +186,13 @@
     transform: rotate(360deg);
   }
 }
+
+.authorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 16px; /* Spacing between cards */
+  margin: 16px; /* Optional margin around the grid */
+  padding: 0;
+  list-style: none; /* Remove default list styling */
+}
+
