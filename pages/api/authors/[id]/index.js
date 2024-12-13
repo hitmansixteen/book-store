@@ -10,9 +10,7 @@ export default async function handler(req, res) {
 
     try {
         const { db } = await connectToDatabase();
-        const author = await db
-            .collection("authors")
-            .findOne({ id: parseInt(id, 10) });
+        const author = await db.collection("authors").findOne({ id: id });
 
         if (!author) {
             return res.status(404).json({ message: "Author not found" });
@@ -20,7 +18,7 @@ export default async function handler(req, res) {
 
         const books = await db
             .collection("books")
-            .find({ authorId: parseInt(id, 10) })
+            .find({ authorId: id })
             .toArray();
 
         res.status(200).json({ author, books });

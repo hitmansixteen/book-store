@@ -10,9 +10,7 @@ export default async function handler(req, res) {
 
     try {
         const { db } = await connectToDatabase();
-        const book = await db
-            .collection("books")
-            .findOne({ id: parseInt(id, 10) });
+        const book = await db.collection("books").findOne({ id: id });
 
         if (!book) {
             return res.status(404).json({ message: "Book not found" });

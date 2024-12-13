@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         const { db } = await connectToDatabase();
         const reviews = await db
             .collection("reviews")
-            .find({ bookId: parseInt(id, 10) })
+            .find({ bookId: id })
             .toArray();
 
         if (!reviews || reviews.length === 0) {
