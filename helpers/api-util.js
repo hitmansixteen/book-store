@@ -1,5 +1,3 @@
-// Api-Util to contain all the api calling (except the user authentication)
-
 export async function getAllBooks() {
     try {
         const response = await fetch("http://localhost:3000/api/books");

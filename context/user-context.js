@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { useSession } from "next-auth/react";
 
-// User Context to contain the information of the logged-in user
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {

@@ -1,6 +1,5 @@
 import { getToken } from "next-auth/jwt";
 
-// 'api/auth/logout' api
 export default async function handler(req, res) {
     if (req.method !== "POST") {
         return res.status(405).json({ error: "Method not allowed" });
@@ -13,7 +12,6 @@ export default async function handler(req, res) {
             return res.status(401).json({ error: "No active session" });
         }
 
-        // Clearing cookies manually
         res.setHeader("Set-Cookie", [
             `next-auth.session-token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT`,
             `next-auth.csrf-token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT`,

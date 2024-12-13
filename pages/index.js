@@ -9,7 +9,6 @@ import {
 } from "@/helpers/api-util";
 import { useState } from "react";
 
-// '/' page (shows all the featured books)
 export default function Home({ books, authors, genres }) {
     const router = useRouter();
     const [loading, setLoading] = useState(false);

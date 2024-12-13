@@ -26,8 +26,6 @@ export default async function handler(req, res) {
             res.status(500).json({ message: "Internal server error" });
         }
     } else if (req.method === "POST") {
-        // Posting the updated search history of a loggeed-in user into the database
-
         const { db } = await connectToDatabase();
         const collection = db.collection("history");
         const token = await getToken({ req });

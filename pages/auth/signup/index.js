@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "./sign-up.module.css";
 
-// '/auth/signup' page
 export default function SignUp() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

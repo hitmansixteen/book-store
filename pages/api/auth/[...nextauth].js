@@ -11,7 +11,7 @@ export const authOptions = {
                 email: { label: "Email", type: "email" },
                 password: { label: "Password", type: "password" },
             },
-            // 'api/auth/signin' api (Sign-in Of the user)
+
             async authorize(credentials) {
                 const { email, password } = credentials;
 
@@ -48,7 +48,6 @@ export const authOptions = {
     secret: process.env.NEXTAUTH_SECRET,
 
     callbacks: {
-        // Also putting the username in the session for re-use in the layout
         async jwt({ token, user }) {
             if (user) {
                 token.id = user.id;

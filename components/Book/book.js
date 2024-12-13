@@ -3,7 +3,6 @@ import stylingBook from "./Book.module.css";
 
 // Book Component
 export const Book = (props) => {
-    // Finding the author and genere of a specific book
     const author = props.authors.find((i) => i.id === props.details.authorId);
     const genre = props.genres.find((i) => i.id === props.details.genreId);
 

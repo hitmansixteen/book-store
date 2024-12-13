@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 import { getAllBooks, getAllAuthors, getAllGenres } from "@/helpers/api-util";
 import { useSession } from "next-auth/react";
 
-// '/books' page (shows all the books)
 const Books = (props) => {
     const router = useRouter();
     const { genre } = router.query;
@@ -29,7 +28,6 @@ const Books = (props) => {
         }
     }, [genre, session]);
 
-    // Fetching the user history
     const fetchRecentSearches = async () => {
         try {
             const response = await fetch("/api/users/history", {
@@ -50,7 +48,6 @@ const Books = (props) => {
         }
     };
 
-    // Filtering thorugh the genre
     const handleGenreChange = () => {
         const newFilteredBooks = props.books.filter((book) => {
             const genreMatch = selectedGenre
@@ -62,7 +59,6 @@ const Books = (props) => {
         setSearchTerm("");
     };
 
-    // Handles the serach bar
     const searchBook = async () => {
         const newFilteredBooks = filteredBooks.filter((book) => {
             const searchMatch = book.title
@@ -83,7 +79,6 @@ const Books = (props) => {
         setSearchTerm("");
     };
 
-    // Update the search history of a logged-in user
     const addSearchQueryToDatabase = async (query) => {
         try {
             const response = await fetch("/api/users/history", {

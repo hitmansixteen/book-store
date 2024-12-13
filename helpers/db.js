@@ -1,4 +1,3 @@
-// General DB connection file to re-use it
 import { MongoClient } from "mongodb";
 
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -12,7 +11,6 @@ if (!MONGODB_DB) {
     throw new Error("Please define the MONGODB_DB environment variable");
 }
 
-// Global variable to store the connection
 let cachedClient = null;
 let cachedDb = null;
 

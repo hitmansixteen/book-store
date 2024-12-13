@@ -1,12 +1,12 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f2f2f2;
+  --foreground: #1c1c1c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #121212;
+    --foreground: #dcdcdc;
   }
 }
 
@@ -41,71 +41,68 @@ a {
   }
 }
 
-
-body.dark p{
-  color: #fff;
+body.dark p {
+  color: #e0e0e0;
 }
 
 body.light {
   /* General Background Color */
-  background-color: #fff;
-  --background: #fff;
+  background-color: #f8f8f8;
+  --background: #f8f8f8;
 
   /* header on each page*/
-  --heading-color: black;
-  --link-color: black;
-  --link-hover-color: #2c7;
+  --heading-color: #2c2c2c;
+  --link-color: #3a3a3a;
+  --link-hover-color: #4c9;
     
   /* Buttons */
-  --button-bg: #ddd;
-  --button-color: #333;
-  --button-text-color: #333;
-  --button-hover-bg: #bbb;
+  --button-bg: #cfcfcf;
+  --button-color: #444;
+  --button-text-color: #444;
+  --button-hover-bg: #b3b3b3;
 
   /* Books */
-  --booklist-bg: #fff;
-  --card-bg: #fff;
-  --title-color: #333;
-  --text-color: #555;
-  --description-color: #666;
-  --price-color: #2c7;
-  --rating-color: #ff9800;
+  --booklist-bg: #f9f9f9;
+  --card-bg: #f9f9f9;
+  --title-color: #444;
+  --text-color: #666;
+  --description-color: #777;
+  --price-color: #3377cc;
+  --rating-color: #ffa500;
 
   /* Authors */
-  --item-bg: #f5f5f5;
-  --item-text-color: #2c3e50;
-  --item-hover-bg: #e0e0e0;
+  --item-bg: #f2f2f2;
+  --item-text-color: #3e4a5d;
+  --item-hover-bg: #dcdcdc;
 }
 
 body.dark {
   /* General Background Color */
-  background-color: #333;
-  --background: #333;
+  background-color: #2a2a2a;
+  --background: #2a2a2a;
 
   /* Header on Each Page*/
-  --heading-color: #fff;
-  --link-color: #fff;
-  --link-hover-color: #2c7;
+  --heading-color: #f1f1f1;
+  --link-color: #f1f1f1;
+  --link-hover-color: #4c9;
 
-   /* Buttons */
-  --button-bg: #444;
-  --button-color: #fff;
-  --button-text-color: #fff;
-  --button-hover-bg: #333;
+  /* Buttons */
+  --button-bg: #555;
+  --button-color: #f1f1f1;
+  --button-text-color: #f1f1f1;
+  --button-hover-bg: #444;
 
-  
   /* Books */
-  --booklist-bg: #333;
-  --card-bg: #3a3a3a;
-  --title-color: #e0e0e0;
-  --text-color: #ccc;
-  --description-color: #bbb;
-  --price-color: #2c7;
-  --rating-color: #ff9800;
+  --booklist-bg: #2b2b2b;
+  --card-bg: #3c3c3c;
+  --title-color: #dcdcdc;
+  --text-color: #bbb;
+  --description-color: #999;
+  --price-color: #3377cc;
+  --rating-color: #ff9e00;
 
   /* Authors */
-  --item-bg: #3a3a3a;
-  --item-text-color: #e0e0e0;
+  --item-bg: #3c3c3c;
+  --item-text-color: #dcdcdc;
   --item-hover-bg: #444;
 }
-

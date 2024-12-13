@@ -1,6 +1,5 @@
 import { connectToDatabase } from "../../../../helpers/db";
 
-// '/api/authors/[id]' api (Fetching a specific author and its books)
 export default async function handler(req, res) {
     const { id } = req.query;
 

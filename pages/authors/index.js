@@ -3,7 +3,6 @@ import styles from "@/styles/General.module.css";
 import Author from "@/components/Authors/author";
 import { getAllAuthors } from "@/helpers/api-util";
 
-// '/authors' page (shows all the authors)
 const AuthorsPage = ({ authors }) => {
     if (!authors) {
         return <h2>Data Failed to Load</h2>;

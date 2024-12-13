@@ -1,6 +1,5 @@
 import { connectToDatabase } from "../../../../../helpers/db";
 
-// '/api/reviews/[id]/books' api (Fetching all the reviews of a specific book)
 export default async function handler(req, res) {
     const { id } = req.query;
 

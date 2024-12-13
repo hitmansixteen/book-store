@@ -3,12 +3,10 @@ import styling from "../../styles/General.module.css";
 import { useRouter } from "next/router";
 import { getAllGenres } from "@/helpers/api-util";
 
-// '/gneres' page (shows all the genres)
 const GenrePage = (props) => {
     const router = useRouter();
 
     const genreClicked = (id) => {
-        //giving the id as a parameter so that it can be used in the filering page
         router.push(`/books?genre=${id}`);
     };
 

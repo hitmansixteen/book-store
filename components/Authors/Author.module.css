@@ -1,32 +1,37 @@
 /* Author.module.css */
+
+/* Author Card Styling */
 .authorCard {
-    background-color: var(--card-bg); /* Theme-dependent background color */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin: 16px 0;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .authorCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .authorName {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--title-color); /* Theme-dependent text color */
-    margin-bottom: 8px;
-  }
-  
-  .authorBio {
-    font-size: 1rem;
-    color: var(--text-color); /* Theme-dependent text color */
-    line-height: 1.5;
-  }
-  
+  background-color: var(--card-bg, #ffffff); /* Theme-dependent background color, with fallback */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 16px 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.authorCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly enhanced hover shadow */
+}
+
+/* Author Name Styling */
+.authorName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--title-color, #2c3e50); /* Theme-dependent title color, fallback to dark color */
+  margin-bottom: 8px;
+}
+
+/* Author Bio Styling */
+.authorBio {
+  font-size: 1rem;
+  color: var(--text-color, #7f8c8d); /* Theme-dependent text color, fallback to a neutral grey */
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 12px;
+}

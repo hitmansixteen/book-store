@@ -4,7 +4,6 @@ import Author from "@/components/Authors/author";
 import { getAuthorById, getBookById } from "@/helpers/api-util";
 import { getSession } from "next-auth/react";
 
-// '/books/[id]/author' page (shows a author information of a specific book)
 const SpecificBooksAuthor = (props) => {
     if (!props.session) {
         return (

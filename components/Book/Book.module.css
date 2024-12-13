@@ -1,10 +1,10 @@
-
+/* General Styling for Headings and Book List */
 .heading {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-  color: var(--heading-color); /* Use a CSS variable for the heading color */
+  color: var(--heading-color, #2c3e50); /* Darker heading color */
 }
 
 .bookList {
@@ -12,11 +12,12 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  background-color: var(--booklist-bg);
+  background-color: var(--booklist-bg, #f9f9f9); /* Light gray background */
 }
 
+/* Styling for each Book Card */
 .bookCard {
-  background-color: var(--card-bg); /* Theme-dependent background color */
+  background-color: var(--card-bg, #ffffff); /* White card background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
@@ -28,42 +29,41 @@
   transform: translateY(-5px);
 }
 
+/* Styling for Book Titles, Authors, and Genre */
 .bookTitle {
   font-size: 18px;
   font-weight: bold;
-  color: var(--title-color); /* Use a CSS variable for the title color */
+  color: var(--title-color, #34495e); /* Softer gray-blue for titles */
   margin-bottom: 10px;
 }
 
 .bookAuthor,
 .bookGenre {
   font-size: 14px;
-  color: var(--text-color); /* Use a CSS variable for general text color */
+  color: var(--text-color, #7f8c8d); /* Lighter gray for text */
   margin-bottom: 5px;
 }
 
 .bookDescription {
   font-size: 14px;
-  color: var(--description-color); /* Theme-dependent description color */
+  color: var(--description-color, #95a5a6); /* Lighter gray for description */
   margin-bottom: 10px;
 }
 
+/* Styling for Book Price and Rating */
 .bookPrice {
   font-size: 16px;
   font-weight: bold;
-  color: var(--price-color); /* Use a CSS variable for the price color */
+  color: var(--price-color, #e67e22); /* Soft orange for price */
   margin-bottom: 10px;
 }
 
 .bookRating {
   font-size: 14px;
-  color: var(--rating-color); /* Use a CSS variable for the rating color */
+  color: var(--rating-color, #f39c12); /* Warm yellow for ratings */
 }
 
-.book-details {
-  margin-bottom: 10px;
-}
-
+/* Review Section Styling */
 .reviewSection {
   margin: 2rem auto;
   max-width: 800px;
@@ -71,10 +71,10 @@
 }
 
 .reviewHeading {
-  color: var(--heading-color);
+  color: var(--heading-color, #2c3e50); /* Darker heading color */
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--button-bg);
+  border-bottom: 2px solid var(--button-bg, #2980b9); /* Blue border for emphasis */
   padding-bottom: 0.5rem;
 }
 
@@ -87,8 +87,9 @@
   gap: 1.25rem;
 }
 
+/* Review Item Styling */
 .reviewItem {
-  background-color: var(--card-bg);
+  background-color: var(--card-bg, #ffffff);
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -100,15 +101,16 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* User and Rating Styling within Reviews */
 .reviewUser {
-  color: var(--title-color);
+  color: var(--title-color, #34495e); /* Softer gray-blue for user name */
   font-weight: 600;
   font-size: 1.1rem;
   margin: 0 0 0.75rem 0;
 }
 
 .reviewRating {
-  color: var(--rating-color);
+  color: var(--rating-color, #f39c12); /* Warm yellow for rating */
   font-weight: 500;
   margin: 0 0 0.75rem 0;
   display: flex;
@@ -117,11 +119,12 @@
 }
 
 .reviewRating span {
-  color: var(--rating-color);
+  color: var(--rating-color, #f39c12); /* Consistent rating color */
 }
 
+/* Review Comment Styling */
 .reviewComment {
-  color: var(--text-color);
+  color: var(--text-color, #7f8c8d); /* Lighter gray for comments */
   font-style: italic;
   line-height: 1.5;
   margin: 0;

@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Author.module.css";
 
-// Author Component
 export const Author = (props) => {
     return (
         <div className={styles.authorCard}>

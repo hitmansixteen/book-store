@@ -1,6 +1,5 @@
 import { connectToDatabase } from "../../../helpers/db";
 
-// '/api/books' api (Fetching all the books)
 export default async function handler(req, res) {
     if (req.method !== "GET") {
         return res.status(405).json({ message: "Method not allowed" });

@@ -1,12 +1,10 @@
 .heading {
-  
   font-size: 24px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
   background-color: var(--header-bg);
   color: var(--heading-color);
-  
 }
 
 .filterContainer {
@@ -18,31 +16,31 @@
 
 .dropdown {
   padding: 10px;
-  border: 1px solid var(--border-color, #ddd); 
+  border: 1px solid var(--border-color, #ccc); /* Lighter border */
   border-radius: 5px;
   font-size: 1rem;
   margin-right: 15px;
   cursor: pointer;
-  background-color: var(--button-bg, #ddd);
-  color: var(--button-color, #333); 
+  background-color: var(--button-bg, #e0e0e0); /* Softer background */
+  color: var(--button-color, #444); /* Darker text */
 }
 
 .searchBar {
   padding: 10px;
-  border: 1px solid var(--border-color, #ddd); 
+  border: 1px solid var(--border-color, #ccc); /* Lighter border */
   border-radius: 5px;
   font-size: 1rem;
   width: 250px;
   margin-right: 15px;
-  background-color: var(--button-bg, #ddd); 
-  color: var(--button-color, #333); 
+  background-color: var(--button-bg, #e0e0e0); /* Softer background */
+  color: var(--button-color, #444); /* Darker text */
 }
 
 .searchButton {
   padding: 10px;
-  background-color: var(--button-bg);
-  color: var(--button-text-color);
-  border: 1px solid var(--border-color, #ddd);
+  background-color: var(--button-bg, #d9d9d9); /* Slightly darker */
+  color: var(--button-text-color, #444);
+  border: 1px solid var(--border-color, #ccc);
   border-radius: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
@@ -50,9 +48,8 @@
 }
 
 .searchButton:hover {
-  background-color: var(--button-hover-bg);
+  background-color: var(--button-hover-bg, #c7c7c7); /* Lighter hover */
 }
-
 
 .Buttons {
   margin-bottom: 10px;
@@ -62,8 +59,8 @@
 }
 
 .Button {
-  background-color: var(--button-bg); 
-  color: var(--button-text-color); 
+  background-color: var(--button-bg, #e0e0e0); /* Softer background */
+  color: var(--button-text-color, #444); /* Darker text */
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -75,7 +72,7 @@
 }
 
 .Button:hover {
-  background-color: var(--button-hover-bg); 
+  background-color: var(--button-hover-bg, #c7c7c7); /* Lighter hover */
 }
 
 .genreList {
@@ -88,18 +85,18 @@
 }
 
 .genreItem {
-  background-color: var(--item-bg);
+  background-color: var(--item-bg, #f7f7f7); /* Slightly lighter background */
   padding: 15px 30px;
   border-radius: 8px;
   font-size: 18px;
   font-weight: bold;
-  color: var(--item-text-color); 
+  color: var(--item-text-color, #333); /* Darker text */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .genreItem:hover {
-  background-color: var(--item-hover-bg); 
+  background-color: var(--item-hover-bg, #dcdcdc); /* Lighter hover */
 }
 
 /* Updated Recent Searches CSS for Horizontal Layout */
@@ -114,7 +111,7 @@
 
 .recentSearches h3 {
   font-size: 1.2rem;
-  color: var(--heading-color);
+  color: var(--heading-color, #444); /* Darker heading */
   margin-right: 1rem;
   text-align: center;
 }
@@ -127,8 +124,8 @@
 }
 
 .recentSearches li {
-  color: var(--link-color);
-  background-color: var(--item-bg);
+  color: var(--link-color, #5c6bc0); /* Softer link color */
+  background-color: var(--item-bg, #f7f7f7); /* Lighter background */
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -143,24 +140,22 @@
 .text {
   font-family: Arial, sans-serif; 
   font-size: 16px;              
-  color: var(--item-text-color);                   
+  color: var(--item-text-color, #333); /* Darker text */
   line-height: 1.5;              
   margin: 10px 0;                
 }
 
-
 .textLink {
-  color: #0070f3;            
+  color: #1e88e5; /* Lighter link color */
   text-decoration: none;     
   font-weight: bold;         
   transition: color 0.2s;  
 } 
 
 .textLink:hover {
-  color: #0056b3;            
+  color: #1976d2; /* Darker hover */
   text-decoration: underline; 
 }
-
 
 .loading {
   position: fixed;
@@ -169,16 +164,18 @@
   transform: translate(-50%, -50%); 
   text-align: center;
 }
+
 .spinner {
   justify-content: center;
   align-content: center;
   border: 8px solid #f3f3f3;
-  border-top: 8px solid #3498db;
+  border-top: 8px solid #2980b9; /* New spinner color */
   border-radius: 50%;
   width: 50px;
   height: 50px;
   animation: spin 1s linear infinite;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
