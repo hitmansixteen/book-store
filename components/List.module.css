@@ -1,0 +1,20 @@
+
+.List {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .Item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 200px;
+  }
+
+  .Container {
+    padding: 20px;
+}
+
+.Filter {
+    margin-bottom: 20px;
+}
