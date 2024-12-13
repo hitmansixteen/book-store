@@ -12,7 +12,6 @@ import {
 import { useRouter } from "next/router";
 import { getSession } from "next-auth/react";
 
-// '/books/[id]' page (shows a single books with his reviews)
 const BookDetails = (props) => {
     const router = useRouter();
 
@@ -81,7 +80,6 @@ const BookDetails = (props) => {
 };
 
 export async function getServerSideProps(context) {
-    // Restrict access to only logged-in users
     const session = await getSession({ req: context.req });
 
     if (!session) {
