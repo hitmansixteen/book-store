@@ -1,46 +1,36 @@
-import { useRouter } from "next/router";
-import Link from "next/link";
+import React from 'react';
+import styles from '@/styles/General.module.css'
 
-export default function InfoPage() {
-    const r = useRouter();
-    const { slug } = r.query;
-    const renderContent = () => {
-        if (!slug) {
-            return <h1>...</h1>;
-        }
-        if (slug[0] === "faqs") {
-            return <h1>Frequently Asked Questions</h1>;
-        }
+// '/info/[...slug]' page
+const InfoSlugPage = (props) => {
 
-        if (slug[0] === "support") {
-            return <h1>Support Section</h1>;
-        }
+  return (
+    <div>
+      <header className={styles.heading}>Info Page - {props.slug}</header>
+      <p className={styles.text}>This is the dynamic info page for {props.slug}</p>
+    </div>
+  );
 
-        if (slug.length > 1) {
-            return <h1>{slug.join(" / ")}</h1>;
-        }
+};
 
-        return <h1>Information Page: {slug.join(" / ")}</h1>;
+export async function getServerSideProps(context) {
+  const { slug } = context.params;
+  console.log(slug)
+
+  const allowedSlugs = ['faqs', 'support'];
+
+  if (!allowedSlugs.includes(slug[0])) {
+    return {
+      notFound: true,
     };
+  }
 
-    return (
-        <div>
-            {renderContent()}
-
-            <nav>
-                <li>
-                    <Link href="/info">Info Home</Link>
-                </li>
-                <li>
-                    <Link href="/info/faqs">FAQs</Link>
-                </li>
-                <li>
-                    <Link href="/info/support">Support</Link>
-                </li>
-                <li>
-                    <Link href="/">Home</Link>
-                </li>
-            </nav>
-        </div>
-    );
+  return {
+    props:{
+      slug:slug[0]
+    },
+  };
 }
+
+
+export default InfoSlugPage;

@@ -1,19 +1,16 @@
-import Link from "next/link";
-export default function InfoPage() {
-    return (
-        <div>
-            <h1>Welcome to the Info Section</h1>
-            <nav>
-                <li>
-                    <Link href="/info/faqs">FAQs</Link>
-                </li>
-                <li>
-                    <Link href="/info/support">Support</Link>
-                </li>
-                <Link href={`/`}>
-                    <button className="blueButton">Home Page</button>
-                </Link>
-            </nav>
-        </div>
-    );
+import React from 'react'
+import styles from '@/styles/General.module.css'
+
+// '/info' page
+const Info = () => {
+  return (
+    <div>
+
+    <header className={styles.heading}>Information Page</header>
+    <p className={styles.text}>This is the general information page.</p>
+
+    </div>
+  )
 }
+
+export default Info;

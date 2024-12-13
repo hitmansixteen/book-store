@@ -1,0 +1,40 @@
+/* NotFound.module.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background, #f0f0f0); /* Use theme-dependent background */
+    text-align: center;
+    padding: 20px;
+}
+
+.errorCode {
+    font-size: 6rem;
+    font-weight: bold;
+    color: var(--rating-color, #ff6b6b); /* Use theme-dependent error color */
+    margin: 0;
+}
+
+.message {
+    font-size: 1.5rem;
+    color: var(--text-color, #333); /* Use theme-dependent text color */
+    margin: 10px 0;
+}
+
+.homeLink {
+    font-size: 1.2rem;
+    color: var(--link-color, #007bff); /* Use theme-dependent link color */
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid var(--link-color, #007bff); /* Use theme-dependent border color */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.homeLink:hover {
+    background-color: var(--link-color, #007bff); /* Use theme-dependent hover color */
+    color: var(--button-text-color, #fff); /* Use theme-dependent hover text color */
+}

@@ -1,31 +1,44 @@
-import useSWR from "swr";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import styles from "@/components/List.module.css";
+import React from 'react';
+import styles from '@/styles/General.module.css';
+import Author from '@/components/Authors/author';
+import { getAllAuthors } from '@/helpers/api-util';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+// '/authors' page (shows all the authors)
+const AuthorsPage = ({ authors }) => {
+  if (!authors) {
+    return <h2>Data Failed to Load</h2>;
+  }
 
-export default function Authors() {
-    const { data, error } = useSWR("/api/authors", fetcher);
-    const r = useRouter();
+  return (
+    <div>
+      <header className={styles.heading}>Authors Page</header>
+      <ul>
+        {authors.map((i) => {
+          return (
+            <li key={i.id}>
+              <Author author={i} />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
 
-    if (error) return <div>Failed to load authors</div>;
-    if (!data) return <div>Loading...</div>;
+export async function getServerSideProps() {
+  const authors = await getAllAuthors();
 
-    return (
-        <div>
-            <h1>Authors</h1>
-            <ul className={styles.List}>
-                {data.map((author) => (
-                    <li key={author.id} className={styles.Item}>
-                        <strong>{author.name}</strong>: {author.biography}
-                    </li>
-                ))}
-            </ul>
+  if (!authors) {
+    return {
+      notFound: true,
+    };
+  }
 
-            <button onClick={() => r.push("/")} className="blueButton">
-                Go to Home Page
-            </button>
-        </div>
-    );
+  return {
+    props: {
+      authors,
+    },
+  };
 }
+
+export default AuthorsPage;

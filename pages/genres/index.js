@@ -1,37 +1,55 @@
-import { getGenres } from "@/lib/books";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import styles from "@/components/List.module.css";
+import React from 'react'
+import styling from '../../styles/General.module.css'
+import { useRouter } from 'next/router';
+import { getAllGenres } from '@/helpers/api-util';
 
-export async function getServerSideProps() {
-    const genres = getGenres();
-    return {
-        props: {
-            genres,
-        },
-    };
+
+// '/gneres' page (shows all the genres)
+const GenrePage = (props) => {
+
+  const router = useRouter()
+
+  const genreClicked = (id) =>{
+
+    //giving the id as a parameter so that it can be used in the filering page
+    router.push(`/books?genre=${id}`)
+  }
+
+  return (
+    <div>
+      
+      <header className={styling.heading}>All Genres</header>
+  
+      <ul className={styling.genreList}>
+        {props.genres.map((genre) => (
+          <li key={genre.id} className={styling.genreItem} onClick={()=> genreClicked(genre.id)}>
+            {genre.name}
+          </li>
+        ))}
+      </ul>
+
+    </div>
+      
+  )
 }
 
-export default function Genres({ genres }) {
-    const r = useRouter();
-    const navigateHome = () => {
-        r.push("/");
-    };
-    return (
-        <div>
-            <h1>Genres</h1>
-            <ul className={styles.List}>
-                {genres.map((genre) => (
-                    <li key={genre.id} className={styles.Item}>
-                        <Link href={`/books?genreId=${genre.id}`}>
-                            {genre.name}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-            <button onClick={navigateHome} className="blueButton">
-                Go to Home Page
-            </button>
-        </div>
-    );
+export async function getServerSideProps(){
+
+  const Genres = await getAllGenres()
+
+  if(!Genres){
+    return{
+      redirect:{
+        destination: '/error'
+      }
+    }
+  }
+
+  return {
+    props:{
+      genres:Genres
+    }
+  }
 }
+
+export default GenrePage;

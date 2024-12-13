@@ -1,0 +1,83 @@
+/* Common Styles for Form Containers (for both SignIn and SignUp) */
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensures it occupies the full screen height */
+  margin: 0;
+  padding: 20px;
+  background-color: var(--background);
+}
+
+.heading {
+  font-size: 2rem;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+}
+
+.inputWrapper {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.inputField,
+.usernameField {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f4f4f4;
+  color: var(--text-color);
+}
+
+.inputField:focus,
+.usernameField:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  background-color: var(--button-bg);
+  border: none;
+  color: var(--button-text-color);
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: var(--button-hover-bg);
+}
+
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.linkContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  color: var(--link-hover-color);
+}

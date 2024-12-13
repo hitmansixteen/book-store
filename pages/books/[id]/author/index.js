@@ -1,36 +1,64 @@
-import { getBooks, getAuthorById } from "@/lib/books";
-import Link from "next/link"; // Import Link from next/link
-import styles from "@/components/List.module.css";
 
-export async function getStaticPaths() {
-    const books = getBooks();
-    const paths = books.map((book) => ({
-        params: { id: book.id.toString() },
-    }));
+import React  from 'react'
+import styles from '@/styles/General.module.css';
+import Author from '@/components/Authors/author';
+import { getAuthorById, getBookById } from '@/helpers/api-util';
+import { getSession } from 'next-auth/react';
 
-    return { paths, fallback: false };
-}
+// '/books/[id]/author' page (shows a author information of a specific book)
+const SpecificBooksAuthor = (props) => {
 
-export async function getStaticProps({ params }) {
-    const books = getBooks();
-    const book = books.find((book) => book.id.toString() === params.id);
-    const author = getAuthorById(book.authorId);
-
-    return { props: { book, author } };
-}
-
-export default function AuthorDetails({ book, author }) {
+  if (!props.session) {
     return (
-        <div className={styles.Item}>
-            <h1>{author.name}</h1>
-            <p>
-                <strong>Biography: </strong>
-                {author.biography}
-            </p>
-
-            <Link href={`/books/${book.id}`}>
-                <strong> Back to the Book</strong>{" "}
-            </Link>
-        </div>
+      <div>
+        <header className={styles.heading}>Author Information</header>
+        <p>You need to be logged in to view this page.</p>
+      </div>
     );
+  }
+
+  return (
+    <div>
+
+    <header className={styles.heading}>Author Information</header>
+    <Author author = {props.Author}/>
+
+    </div>
+  )
+
 }
+
+export async function getServerSideProps(context){
+  // Restrict access to only logged-in users
+  const session = await getSession({ req: context.req });
+
+  if (!session) {
+    return {
+      props: {
+        session: null,
+      },
+    };
+  }
+
+
+  const book = await getBookById(context.params.id)
+
+  if(!book){
+    return{
+      redirect:{
+        destination: '/404'
+      }
+    }
+  }
+
+  const author = await getAuthorById(book.authorId)
+
+  return {
+    props:{
+      Author: author,
+      session
+    }
+  }
+}
+
+export default SpecificBooksAuthor;
