@@ -4,7 +4,7 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-  color: var(--heading-color, #2c3e50); /* Darker heading color */
+  color: var(--heading-color, #2c3e50); 
 }
 
 .bookList {
@@ -12,12 +12,12 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  background-color: var(--booklist-bg, #f9f9f9); /* Light gray background */
+  background-color: var(--booklist-bg, #f9f9f9); 
 }
 
 /* Styling for each Book Card */
 .bookCard {
-  background-color: var(--card-bg, #ffffff); /* White card background */
+  background-color: var(--card-bg, #ffffff); 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
@@ -33,20 +33,20 @@
 .bookTitle {
   font-size: 18px;
   font-weight: bold;
-  color: var(--title-color, #34495e); /* Softer gray-blue for titles */
+  color: var(--title-color, #34495e); 
   margin-bottom: 10px;
 }
 
 .bookAuthor,
 .bookGenre {
   font-size: 14px;
-  color: var(--text-color, #7f8c8d); /* Lighter gray for text */
+  color: var(--text-color, #7f8c8d);
   margin-bottom: 5px;
 }
 
 .bookDescription {
   font-size: 14px;
-  color: var(--description-color, #95a5a6); /* Lighter gray for description */
+  color: var(--description-color, #95a5a6); 
   margin-bottom: 10px;
 }
 
@@ -54,13 +54,13 @@
 .bookPrice {
   font-size: 16px;
   font-weight: bold;
-  color: var(--price-color, #e67e22); /* Soft orange for price */
+  color: var(--price-color, #e67e22);
   margin-bottom: 10px;
 }
 
 .bookRating {
   font-size: 14px;
-  color: var(--rating-color, #f39c12); /* Warm yellow for ratings */
+  color: var(--rating-color, #f39c12); 
 }
 
 /* Review Section Styling */
@@ -71,10 +71,10 @@
 }
 
 .reviewHeading {
-  color: var(--heading-color, #2c3e50); /* Darker heading color */
+  color: var(--heading-color, #2c3e50); 
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--button-bg, #2980b9); /* Blue border for emphasis */
+  border-bottom: 2px solid var(--button-bg, #2980b9); 
   padding-bottom: 0.5rem;
 }
 
@@ -103,14 +103,14 @@
 
 /* User and Rating Styling within Reviews */
 .reviewUser {
-  color: var(--title-color, #34495e); /* Softer gray-blue for user name */
+  color: var(--title-color, #34495e); 
   font-weight: 600;
   font-size: 1.1rem;
   margin: 0 0 0.75rem 0;
 }
 
 .reviewRating {
-  color: var(--rating-color, #f39c12); /* Warm yellow for rating */
+  color: var(--rating-color, #f39c12); 
   font-weight: 500;
   margin: 0 0 0.75rem 0;
   display: flex;
@@ -119,12 +119,12 @@
 }
 
 .reviewRating span {
-  color: var(--rating-color, #f39c12); /* Consistent rating color */
+  color: var(--rating-color, #f39c12); 
 }
 
 /* Review Comment Styling */
 .reviewComment {
-  color: var(--text-color, #7f8c8d); /* Lighter gray for comments */
+  color: var(--text-color, #7f8c8d);
   font-style: italic;
   line-height: 1.5;
   margin: 0;
