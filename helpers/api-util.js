@@ -105,21 +105,6 @@ export async function getBooksByGenreId(id) {
     }
 }
 
-export async function getAuthorById(id) {
-    try {
-        const response = await fetch(`http://localhost:3000/api/authors/${id}`);
-
-        if (!response.ok) {
-            throw new Error(`Error: ${response.status} ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        return data.author;
-    } catch (error) {
-        console.error(`Failed to fetch author with ID ${id}:`, error);
-    }
-}
-
 export async function getReviewByBookId(id) {
     try {
         const response = await fetch(
@@ -143,5 +128,20 @@ export async function getFeaturedBooks() {
         return books;
     } catch (error) {
         console.error("Failed to fetch featured books:", error);
+    }
+}
+
+export async function getAuthorById(id) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/authors/${id}`);
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        return data.author;
+    } catch (error) {
+        console.error(`Failed to fetch author with ID ${id}:`, error);
     }
 }
